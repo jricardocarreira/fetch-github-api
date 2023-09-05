@@ -8,7 +8,7 @@ const screen = {
                                             <p>${user.bio ?? "Doesn't have registered bio 🫠"}</p>
                                             <p><i class="fa-solid fa-user-group" style="color: #000222;"></i>  Followers ${user.followers} · Following ${user.following}</p>
                                         </div>
-                                    </div>`
+                                      </div>`
 
         /* REPOSITORIES */
 
@@ -29,17 +29,21 @@ const screen = {
             this.userProfile.innerHTML += `<div class='repositories section'>
                                                 <h2>Repositories</h2>
                                                 <ul>${repositoriesItens}</ul>
-                                            </div>`
+                                           </div>`
         }
 
         /* EVENTS */
 
         let eventsItens = ''
-        user.events.forEach(event => {
-            if (event.type === "PushEvent") {
-                eventsItens += `<li><p><span>${event.repo.name}</span> - ${event.payload.commits[0].message}</p></li>`
-            } else if (event.type === "CreateEvent") {
-                eventsItens += `<li><p><span>${event.repo.name}</span> - ${event.payload.description ?? "This repository doesn't have a description"}</p></li>`
+        user.events.forEach(element => {
+            if (element.type === 'PushEvent') {
+                eventsItens += `<li>
+                                    <p><span>${element.repo.name}</span> - ${element.payload.commits[0].message}</p>
+                                </li>`
+            } else {
+                eventsItens += `<li>
+                                    <p><span>${element.repo.name}</span> - Created a ${element.payload.ref_type}</p>
+                                </li>`
             }
         })
 
@@ -47,13 +51,9 @@ const screen = {
             this.userProfile.innerHTML += `<div class='events section'>
                                                 <h2>Events</h2>
                                                 <ul>${eventsItens}</ul>
-                                            </div>`
+                                           </div>`
         }
-    }/* ,
-
-    renderNotFound() {
-        this.userProfile.innerHTML = '<h3>User not found</h3>'
-    } */
+    }
 }
 
 export { screen }
