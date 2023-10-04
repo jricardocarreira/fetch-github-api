@@ -27,7 +27,7 @@ main {
 .devicon-github-original {
   font-size: 60px;
   margin-bottom: 30px;
-  color: #FFFFFF;
+  color: #FFF;
 }
 
 .repositories.section {
@@ -86,7 +86,7 @@ main {
 }
 
 .container header #btn-search:hover {
-  background-color: hotpink;
+  background-color: #38B28B;
   color: #ffffff;
   border-color: #ffffff;
 }
@@ -112,7 +112,7 @@ main {
 .container .profile-data .info img {
   width: 50%;
   border-radius: 50%;
-  border: 10px solid hotpink;
+  border: 10px solid #38B28B;
 }
 
 .container .profile-data .info h1 {
@@ -155,7 +155,7 @@ main {
 }
 
 .container .profile-data .repositories ul li a:hover {
-  background-color: hotpink;
+  background-color: #38B28B;
   color: #fff
 }
 
